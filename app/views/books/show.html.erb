@@ -1,0 +1,39 @@
+<article>
+  <header>
+    <h1><%= @book.title %></h1>
+  </header>
+  <h2>Sinopse</h2>
+  <p>
+    <%= @book.synopsis %>
+  </p>
+  <h3>Editora</h3>
+  <p>
+    <%= @book.publisher %>
+  </p>
+  <h3>Lançamento</h3>
+  <p>
+    <%= @book.relesed_on  %>
+  </p>
+  <h3>Autor</h3>
+  <p>
+    <%= @book.author %>
+  </p>
+  <h3>Páginas</h3>
+  <p>
+    <%= @book.number_of_pages %>
+  </p>
+  <h3>Edição</h3>
+  <p>
+    <%= @book.edition %>
+  </p>
+  <h3>Lingua</h3>
+  <p>
+    <%= @book.language %>
+  </p>
+
+</article>
+<nav>
+<%= link_to("Todos os livros", root_path) %>
+<%= link_to "Editar", edit_book_path(@book) %>
+<%= link_to "Delete", book_path(@book), method: :delete, data: { confirm: 'Tem certeza que deseja deletar?' } %>
+</nav>

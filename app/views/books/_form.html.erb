@@ -1,0 +1,51 @@
+<%= form_for(@book) do |f| %>
+<%= render "shared/errors" %>
+<p>
+  <%= f.label "Título" %><br/>
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label "Autor" %><br/>
+  <%= f.text_field :author %>
+</p>
+
+<p>
+  <%= f.label "Edição" %><br/>
+  <%= f.text_field :edition %>
+</p>
+
+<p>
+  <%= f.label "Editora" %><br/>
+  <%= f.text_field :publisher %>
+</p>
+
+<p>
+  <%= f.label "ISBN" %><br/>
+  <%= f.text_field :isbn %>
+</p>
+
+<p>
+  <%= f.label "Data" %><br/>
+  <%= f.text_field :relesed_on %>
+</p>
+
+<p>
+  <%= f.label "Lingua" %><br/>
+  <%= f.text_field :language %>
+</p>
+
+<p>
+  <%= f.label "Páginas" %><br/>
+  <%= f.text_field :number_of_pages %>
+</p>
+
+<p>
+  <%= f.label "Sinopse" %><br/>
+  <%= f.text_area :synopsis, cols:40, rows: 7 %>
+</p>
+
+<p>
+  <%= f.submit %>
+  <%= link_to "Cancelar", books_path %>
+</p>
+<% end %>

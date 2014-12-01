@@ -1,0 +1,37 @@
+<h1>Biblioteca</h1>
+
+<h2><%=pluralize(@books.size, "Livro")%></h2>
+
+<% @books.each do |book| %>
+<article class "book">
+  <header>
+    <h2><%= link_to(book.title, book_path(book)) %> <small>(<%=book.author%>)</small></h2>
+    <%= image_for(@book) %>
+  </header>
+  <p>
+    <%= book.synopsis %>
+  </p>
+  <table>
+    <tr>
+      <th>Editora:</th>
+      <td><%= book.publisher %></td>
+    </tr>
+    <tr>
+      <th>Número de páginas</th>
+      <td><%= book.number_of_pages %></td>
+    </tr>
+
+    <tr>
+      <th>ISBN:</th>
+      <td><%= book.isbn %></td>
+    </tr>
+    <tr>
+      <th>Data de lançamento:</th>
+      <td><%= book.relesed_on %></td>
+    </tr>
+  </table>
+</article>
+
+<% end %>
+
+<%= link_to("Cadastrar novo livro", new_book_path) %>
