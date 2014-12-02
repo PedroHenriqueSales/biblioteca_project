@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
-
+  before_action :require_signin, except: [:new, :create]
+  
   def index
     @books = Book.all
   end

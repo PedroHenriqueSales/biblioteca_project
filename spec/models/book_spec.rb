@@ -1,19 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe Book, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+describe "A book" do
 
 it "requires a title" do
   book = Book.new(title: "")
 
-  movie.valid?  # populates errors
+  book.valid?  # populates errors
 
   expect(book.errors[:title].any?).to eq(true)
 end
 
 it "requires a ISBN" do
-  book = Book.new(isbn "")
+  book = Book.new(isbn: "")
 
   book.valid?
 
@@ -61,7 +59,7 @@ it "requires a language" do
 end
 
 it "requires a synopsis over 10 characters" do
-  book = Boook.new(synopsis: "X" * 10 )
+  book = Book.new(synopsis: "........." )
 
   book.valid?
 
@@ -78,9 +76,4 @@ it "accepts a positive number of pages" do
   expect(book.errors[:number_of_pages].any?).to eq(false)
 end
 
-
-it "is valid with example attributes" do
-  book = Book.new(book_attributes)
-
-  expect(book.valid?).to eq(true)
 end
