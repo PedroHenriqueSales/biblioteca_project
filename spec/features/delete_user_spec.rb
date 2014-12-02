@@ -4,7 +4,7 @@ def sign_in(user)
   visit new_session_url
   fill_in "Email", with: user.email
   fill_in "Password", with: user.password
-  click_button "Sign In"
+  click_button "Entrar"
 end
 
 def user_attributes(overrides = {})
@@ -24,10 +24,9 @@ describe "Deleting a user" do
 
     visit user_path(user)
 
-    click_link 'Delete Account'
+    click_link 'Excluir Conta'
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_text('Conta excluida com sucesso"')
 
     visit users_path
 
@@ -41,9 +40,8 @@ describe "Deleting a user" do
 
     visit user_path(user)
 
-    click_link 'Delete Account'
+    click_link 'Excluir Conta'
 
-    expect(page).to have_link('Sign In')
-    expect(page).not_to have_link('Sign Out')
+    expect(page).to have_link('Entrar')
   end
 end

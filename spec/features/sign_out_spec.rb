@@ -4,7 +4,7 @@ def sign_in(user)
   visit new_session_url
   fill_in "Email", with: user.email
   fill_in "Password", with: user.password
-  click_button "Sign In"
+  click_button "Entrar"
 end
 
 describe "Signing out" do
@@ -14,11 +14,10 @@ describe "Signing out" do
 
     sign_in(user)
 
-    click_link 'Sign Out'
+    click_link 'Sair'
 
-    expect(page).to have_text("signed out")
-    expect(page).not_to have_link('Sign Out')
-    expect(page).to have_link('Sign In')
+    expect(page).not_to have_link('Sair')
+    expect(page).to have_link('Entrar')
   end
 
 end

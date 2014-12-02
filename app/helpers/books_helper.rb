@@ -7,4 +7,5 @@ module BooksHelper
       image_tag(book.image_file_name)
     end
   end
+
 end
