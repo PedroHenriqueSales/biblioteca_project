@@ -45,12 +45,6 @@ describe UsersController do
       expect(response).to redirect_to(new_session_url)
     end
 
-    it "cannot access destroy" do
-      delete :destroy, id: @user
-
-      expect(response).to redirect_to(new_session_url)
-    end
-
   end
 
   context "when signed in as the wrong user" do
